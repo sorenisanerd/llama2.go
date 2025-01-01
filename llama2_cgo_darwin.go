@@ -6,6 +6,15 @@ package llama2
 // #include <Accelerate/Accelerate.h>
 import "C"
 
+import (
+	"fmt"
+	"os"
+)
+
+func init() {
+	fmt.Fprintln(os.Stderr, "Using MacOS Accelerate framework for matrix multiplication")
+}
+
 func matmul(xout, x, w []float32) {
 	C.cblas_sgemv(
 		C.CblasRowMajor,

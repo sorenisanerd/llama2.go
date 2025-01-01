@@ -6,9 +6,16 @@ package llama2
 import "C"
 
 import (
+	"fmt"
+	"os"
+
 	"gonum.org/v1/gonum/blas"
 	"gonum.org/v1/netlib/blas/netlib"
 )
+
+func init() {
+	fmt.Fprintln(os.Stderr, "Using netlib for matrix multiplication")
+}
 
 var blas32 netlib.Implementation
 

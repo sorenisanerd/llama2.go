@@ -3,9 +3,15 @@
 package llama2
 
 import (
+	"fmt"
+	"os"
 	"runtime"
 	"sync"
 )
+
+func init() {
+	fmt.Fprintln(os.Stderr, "Using custom, pure Go matrix multiplication")
+}
 
 var matmulConcurrency = runtime.GOMAXPROCS(0) * 2
 
