@@ -1,4 +1,4 @@
-//go:build (cgo && darwin && netlib) || (cgo && !darwin)
+//go:build ((cgo && darwin && netlib) || (cgo && !darwin)) && !nonetlib
 
 package llama2
 
